@@ -3,45 +3,42 @@ package teste;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Queue implements QueueTAD{
+public class Queue<T extends Comparable<T>> implements QueueTAD<T> {
 
-	private ArrayList<Integer> lista = new ArrayList<Integer>();
-			
-		
-	@Override
-	public void enqueue(Integer d) { //coloca
-		lista.add(d);
-		
-	}
+    private ArrayList<T> elements = new ArrayList<T>();
+
+    @Override
+    public void enqueue(T d) {
+        this.elements.add(d);
+    }
+
+    @Override
+    public T dequeue() {
+        T aux = this.elements.get(0);
+        this.elements.remove(0);
+        return aux;
+    }
+
+    @Override
+    public T first() {
+        return this.elements.get(0);
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return this.elements.isEmpty();
+    }
+
+    @Override
+    public int size() {
+        return this.elements.size();
+    }
 
 	@Override
-	public Integer dequeue() {//tira
-		
-		return lista.remove(index);
-	}
-
-	@Override
-	public Comparable first() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public int size() {
+	public int compareTo(Integer o) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
-	public void enqueue(Comparable d) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

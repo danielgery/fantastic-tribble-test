@@ -1,9 +1,9 @@
 package teste;
 
-public interface QueueTAD extends Comparable<Integer> {
-	public void enqueue(Integer d);
-	public Integer dequeue();
-	public Integer first();
+public interface QueueTAD<T> extends Comparable<T> {
+	public void enqueue(T d);
+	public T dequeue();
+	public T first();
 	public boolean isEmpty();
 	public int size();
 }
